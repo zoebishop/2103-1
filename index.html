@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - 2102-1</title>
+  
+  
+  
+  
+<style>
+.student{
+  text-align:center;
+  border: solid;
+  border-width: 3px;
+  background-color: rgb(33,96,120);
+  color: rgb(215,236,244);
+  margin: auto;
+  width: 40%;
+}
+
+
+
+#pickStudent{
+  display: block;
+  margin: auto;
+  width: 10%;
+  background-color: rgb(33,96,120);
+  color: rgb(215,236,244);
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <div id="container">
+  <div class="student" id="zoebishop">
+    <span>Zoe Bishop</span>
+  </div>
+  
+  <div class="student" id="roryleonard">
+    <span>Rory Leonard</span>
+  </div>
+  
+    <div class="student" id="williamgross">
+    <span>William Gross</span>
+  </div>
+  
+  <div class="student" id="rocketdavis">
+    <span>Rocket Davis</span>
+  </div>
+  
+  <div class="student" id="lucialopez">
+    <span>Lucia Lopez</span>
+  </div>
+  
+  <div class="student" id="keeganatchison">
+    <span>Keegan Atchison</span>
+  </div>
+  
+  <div class="student" id="shaymaseckschick">
+    <span>Shay Meseck-Schick</span>
+  </div>
+  
+  <div class="student" id="gunnisonsweeney">
+    <span>Gunnison Sweeney</span>
+  </div>
+  
+  <div class="student" id="sophiasantosufkes">
+    <span>Sophia Santos-Ufkes</span>
+  </div>
+  
+  <div class="student" id="henryroseman">
+    <span>Henry Roseman</span>
+  </div>
+  
+  <div class="student" id="colehansen">
+    <span>Cole Hansen</span>
+  </div>
+  
+  <div class="student" id="vinayvenkatesh">
+    <span>Vinay Venkatesh</span>
+  </div>
+  
+  <div class="student" id="skyepratley">
+    <span>Skye Pratley</span>
+  </div>
+  
+  <div class="student" id="nicholascofinas">
+    <span>Nicholas Cofinas</span>
+  </div>
+  
+  <div class="student" id="alexolsen">
+    <span>Arnold Tian</span>
+  </div>
+  
+  <div class="student" id="samjennings">
+    <span>Sam Jennings</span>
+  </div>
+  
+  <div class="student" id="elliottekortus">
+    <span>Elliotte Kortus</span>
+  </div>
+  
+  <div class="student" id="rashidharoun">
+    <span>Rashid Haroun</span>
+  </div>
+  
+  <div class="student" id="roryleonard">
+    <span>Rory Leonard</span>
+  </div>
+  
+  <div class="student" id="maximoavalone">
+    <span>Maximo Avalone</span>
+  </div>
+</div>
+<p>
+<button id="pickStudent">Random Student</button>
+<div>
+  Random Student <span id="picked">...</span>
+  
+</div>
+  
+  
+      <script id="rendered-js" >
+console.clear();
+
+const students = [];
+
+function makeStudent(username, first, last, gradelevel) {
+  const student = {};
+  student.username = username;
+  student.first = first;
+  student.last = last;
+  student.gradelevel = gradelevel;
+  student.clickcount = 0;
+  student.lasttime = Date.now();
+  return student;
+}
+
+students.push(makeStudent("zoebishop","Zoe","Bishop","11"));
+students.push(makeStudent("roryleonard","Rory","Leonard","9"));
+students.push(makeStudent("williamgross","William","Gross","9"));
+students.push(makeStudent("rocketdavis","Rocket","Davis","9"));
+students.push(makeStudent("lucialopez","Lucia","Lopez","9"));
+students.push(makeStudent("keeganatchison","Keegan","Atchison","11"));
+students.push(makeStudent("shaymaseckschick","Shay","Meseck-Schick","10"));
+students.push(makeStudent("gunnisonsweeney","Gunnison","Sweeney","9"));
+students.push(makeStudent("sophiasantosufkes","Sophia","Santos-Ufkes","12"));
+students.push(makeStudent("henryroseman","Henry","Roseman","11"));
+students.push(makeStudent("colehansen","Cole","Hansen","9"));
+students.push(makeStudent("vinayvenkatesh","Vinay","Venkatesh","9"));
+students.push(makeStudent("skyepratley","Skye","Pratley","9"));
+students.push(makeStudent("nicholascofinas","Nicholas","Cofinas","9"));
+students.push(makeStudent("alexolsen","Alex","Olsen","9"));
+students.push(makeStudent("arnoldtian","Arnold","Tian","9"));
+students.push(makeStudent("samjennings","Sam","Jennings","10"));
+students.push(makeStudent("elliottekortus","Elliotte","Kortus","10"));
+students.push(makeStudent("rashidharoun","Rashid","Haroun","11"));
+students.push(makeStudent("maximoavalone","Maximo","Avalone","9"));
+
+function pickStudent() {
+  let randomStudentNum = Math.floor(Math.random() * students.length);
+  let student = students[randomStudentNum];
+  document.getElementById("picked").textContent =
+    student.first + " " + student.last;
+}
+
+pickStudent();
+
+let element = document.getElementById("pickStudent");
+
+element.addEventListener("click", pickStudent);
+
+function renderList() {
+  console.log("renderList");
+  students.sort(function (a, b) {
+    return a.clickcount - b.clickcount;
+  });
+  let content = "";
+
+  for (let i = 0; i < students.length; i++) {
+    content += `<div class="student" id="${students[i].username}"> ${students[i].first} ${students[i].last} ${students[i].clickcount}</div>\n`;
+  }
+
+  let element = document.getElementById("container");
+  element.innerHTML = content;
+}
+
+function listclick(e) {
+  console.log(e.target.id);
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].username == e.target.id) {
+      students[i].clickcount++;
+    }
+  }
+
+  renderList();
+}
+
+let renderclick = document.getElementById("container");
+renderclick.addEventListener("click", listclick);
+renderList();
+    </script>
+
+  
+
+</body>
+
+</html>
